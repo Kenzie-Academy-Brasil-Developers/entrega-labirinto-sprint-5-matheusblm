@@ -1,0 +1,31 @@
+.line{
+	display: flex;
+	flex-direction: row;
+}
+.wall{
+	width: 10px;
+	height: 10px;
+	background-color: black;
+	margin:0px;
+}
+
+.space{
+	width: 10px;
+	height: 10px;
+	background-color: red;
+	margin:0px;
+}
+
+.player{
+	width: 10px;
+	height: 10px;
+	background-color: blue;
+	margin:0px;
+}
+
+.finsh{
+	width: 10px;
+	height: 10px;
+	background-color: rebeccapurple;
+	margin:0px;
+}
