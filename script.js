@@ -15,9 +15,18 @@ const map = [
 	"W       W       W   W",
 	"WWWWWWWWWWWWWWWWWWWWW",
     ];
-
 const boardMaze = document.getElementById("boardMaze")
 let player = document.getElementsByClassName("player")
+const buttonStopMusic = document.getElementById("stopMusic")
+const buttonReset = document.getElementById("reset")
+let backgroundSound = document.getElementById("audioStrat");
+
+buttonReset.addEventListener("click", function () {
+	reset()
+      });
+buttonStopMusic.addEventListener("click", function () {
+	backgroundSound.pause();
+      });
 
 document.addEventListener('keydown', (event) => {
 	const keyName = event.key;
@@ -52,6 +61,7 @@ document.addEventListener('keydown', (event) => {
 			}
 	}
 	if(keyName === "ArrowRight"){
+		soundStrat()
 		let nextLine = playerLocation()[0]
 		let column = playerLocation()[1]+1
 		if(column <= 20){
@@ -65,6 +75,7 @@ document.addEventListener('keydown', (event) => {
 				divTest.appendChild(player)
 			}
 			if(typeOfdiv === "finsh"){
+				alertWin()
 				console.log("winner")
 				let player = document.getElementsByClassName("player")[0]
 				divTest.appendChild(player)
@@ -149,6 +160,29 @@ function reset(){
 
 function win (){
 
+}
+
+function soundStrat() {
+	backgroundSound.play();
+    }
+function soundErro() {
+	let sound = document.getElementById("audioErro");
+	sound.play();
+    }
+function soundWin() {
+	let sound = document.getElementById("audioWin");
+	sound.play();
+    }
+function alertWin(){
+	let div = document.getElementById("boardMaze")
+	let novo = document.createElement("span")
+	novo.classList.add("alertWin")
+	soundWin()
+	novo.append("Voce ganhou!")
+	div.appendChild(novo)
+	setTimeout(function(){
+		novo.classList.add("hidden")
+		}, 5000)
 }
 
 makeDiv(map)

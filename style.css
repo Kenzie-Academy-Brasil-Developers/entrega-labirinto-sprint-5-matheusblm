@@ -1,31 +1,95 @@
+
+#game{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #faedcd;
+}
+header{
+	background-color: #d4a373;
+	width: 100%;
+	text-align: center;
+	color: white;
+}
 .line{
 	display: flex;
 	flex-direction: row;
 }
 .wall{
-	width: 10px;
-	height: 10px;
+	width: 15px;
+	height: 15px;
 	background-color: black;
 	margin:0px;
 }
 
 .space{
-	width: 10px;
-	height: 10px;
-	background-color: red;
+	width: 15px;
+	height: 15px;
+	background-color: white;
 	margin:0px;
 }
 
 .player{
-	width: 10px;
-	height: 10px;
-	background-color: blue;
+	width: 15px;
+	height: 15px;
+	background-color: red;;
 	margin:0px;
 }
 
 .finsh{
-	width: 10px;
-	height: 10px;
+	width: 15px;
+	height: 15px;
 	background-color: rebeccapurple;
 	margin:0px;
+}
+button{
+	max-width: 40px;
+	margin-top: 5px;
+	border-style: hidden;
+	border-radius: 4px;
+	padding: 5px;
+	background-color: #fefae0;
+	color: #000;
+}
+button:hover{
+	background-color: #d4a373;
+	cursor: pointer;
+}
+#stopMusic{
+	align-self: flex-start;
+	
+}
+button img{
+	width: 15px;
+	height: 15px;
+}
+.alertWin{
+	font-size: 15px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	padding: 15px;
+	transition-duration: 0.5s;
+	z-index: 1;
+	color: white;
+	border-style: hidden;
+	border-radius: 3px;
+	background-color: #d4a373;
+	width: 50px;
+	height: 30px;
+    }
+    .hidden{
+	display: none;
+	transition-duration: 0.5s;
+}
+@media screen and (min-width: 700px) {
+	.wall, .space, .player, .finsh{
+		width: 25px;
+		height: 25px;
+	}
+	.player{
+		height: 40px;
+	}
 }
